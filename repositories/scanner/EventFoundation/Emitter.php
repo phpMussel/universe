@@ -60,4 +60,26 @@ class Emitter
 
         return $event;
     }
+
+    /**
+     * constructs an event object with the given parameters only if the event is known and emits the event.
+     *
+     * @param $eventClassName
+     * @param array $parameters
+     * @return EventInterface|null
+     */
+    public function emitIf($eventClassName, array $parameters = [])
+    {
+        $eventReflection = new \ReflectionClass($eventClassName);
+
+        if ( array_key_exists($eventReflection->getConstant('EVENT_NAME'), $this->subscribers) )
+        {
+            /** @var EventInterface $event */
+            $event = $eventReflection->newInstanceArgs($parameters);
+
+            return $this->emit($event);
+        }
+
+        return null;
+    }
 }
