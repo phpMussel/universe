@@ -56,7 +56,7 @@ abstract class AbstractEvent
      */
     public function getName()
     {
-        if ( ! defined(get_called_class().'::EVENT:NAME') )
+        if ( ! defined(get_called_class().'::EVENT_NAME') )
         {
             throw new \RuntimeException('Undefined event name');
         }
