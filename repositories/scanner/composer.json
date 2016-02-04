@@ -18,6 +18,8 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "ext-spl": "*"
+    "ext-spl": "*",
+    "phpmussel/sigs-clamav": "~1.0",
+    "phpmussel/sigs-mussel": "~1.0"
   }
 }
