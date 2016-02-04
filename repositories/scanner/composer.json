@@ -1,0 +1,23 @@
+{
+  "name": "phpmussel/scanner",
+  "version": "1.0",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Caleb Mazalevskis",
+      "homepage": "https://github.com/Maikuolan"
+    },
+    {
+      "name": "Matthias Kaschubowski",
+      "homepage": "https://github.com/Golpha"
+    },
+    {
+      "name": "Daniel Ruf",
+      "homepage": "https://github.com/DanielRuf"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "ext-spl": "*"
+  }
+}

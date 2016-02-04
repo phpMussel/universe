@@ -1,0 +1,17 @@
+{
+  "repositories": [
+    {
+      "packagist": false
+    },
+    {
+      "type": "path",
+      "url": "../repositories/*"
+    }
+  ],
+  "require": {
+    "phpmussel/scanner": "~1.0",
+    "phpmussel/userland-hook": "~1.0",
+    "phpmussel/sigs-clamav": "~1.0",
+    "phpmussel/sigs-mussel": "~1.0"
+  }
+}
