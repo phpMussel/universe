@@ -17,12 +17,12 @@ use Psr\Log\LoggerInterface;
  * @package Mussel\PluginFoundation
  * @author Matthias Kaschubowski
  */
-interface WhenInfected
+interface Infection
 {
     /**
      * @param InfectedFileEvent $event
      * @param LoggerInterface|null $logger
      * @return null
      */
-    public function whenInfected(InfectedFileEvent $event, LoggerInterface $logger = null);
+    public function onInfectedFile(InfectedFileEvent $event, LoggerInterface $logger = null);
 }
