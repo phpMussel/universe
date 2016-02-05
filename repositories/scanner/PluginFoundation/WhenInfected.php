@@ -10,6 +10,7 @@ namespace Mussel\PluginFoundation;
 
 
 use Mussel\EventFoundation\Events\InfectedFileEvent;
+use Psr\Log\LoggerInterface;
 
 /**
  * Interface WhenInfected
@@ -20,7 +21,8 @@ interface WhenInfected
 {
     /**
      * @param InfectedFileEvent $event
+     * @param LoggerInterface|null $logger
      * @return null
      */
-    public function whenInfected(InfectedFileEvent $event);
+    public function whenInfected(InfectedFileEvent $event, LoggerInterface $logger = null);
 }
