@@ -9,6 +9,9 @@
 namespace Mussel\EventFoundation;
 
 
+use Psr\Log\LoggerInterface;
+
+
 /**
  * Event Emitter
  * @package Mussel\EventFoundation
@@ -20,6 +23,20 @@ class Emitter
      * @var callable[][]
      */
     protected $subscribers = [];
+
+    /**
+     * @var null|LoggerInterface
+     */
+    protected $logger;
+
+    /**
+     * Emitter constructor.
+     * @param LoggerInterface|null $logger
+     */
+    public function __construct(LoggerInterface $logger = null)
+    {
+        $this->logger = $logger;
+    }
 
     /**
      * @param EventSubscriberInterface $subscriber
@@ -49,7 +66,7 @@ class Emitter
 
             foreach ( $this->subscribers[$eventName] as $callbacks )
             {
-                call_user_func($callbacks, $event);
+                call_user_func($callbacks, $event, $this->logger);
 
                 if ( $event->isPropagationStopped() )
                 {
